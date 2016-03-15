@@ -1,16 +1,5 @@
 <h1><?php echo $osvisitors; ?><span class="pull-right">Reorder</span></h1>
 
-<!-- Fash Message -->
-<?php if(isset($_SESSION['flash'])): ?>
-    <?php foreach($_SESSION['flash'] as $type => $message): ?>
-        <div class="alert alert-<?php echo $type; ?> alert-anim">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <?php echo $message; ?>
-        </div>
-    <?php endforeach; ?>
-    <?php unset($_SESSION['flash']); ?>
-<?php endif; ?>
-
 <!-- Login Form -->
 <?php if (!isset($_SESSION['valid'])): ?>
 <div class="alert alert-danger alert-anim">
@@ -61,7 +50,22 @@ if (isset($_SESSION['valid']))
             ");
             $query->execute();
         }
-        if ($query) $_SESSION['flash']['success'] = "<i class=\"glyphicon glyphicon-ok\"></i> Table ".$tbname." re-ordered successfully ...";   
+
+        if ($query)
+        {
+            echo '<div class="alert alert-success alert-anim-off">';
+            echo '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+            echo '<i class="glyphicon glyphicon-ok"></i> Table <strong>id</strong> re-ordered successfully ...';
+            echo '</div>';
+        }
+
+        else
+        {
+            echo '<div class="alert alert-danger alert-anim-off">';
+            echo '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+            echo '<i class="glyphicon glyphicon-ok"></i> Table <strong>id</strong> re-ordered failed ...';
+            echo '</div>';
+        }
     }
 
     if ($_SESSION['useruuid'] === $superadmin) {$state = "";}
