@@ -41,8 +41,10 @@ This is a Visitors system for Open Simulator
     <h3>inc/config.php</h3>
     <ul>
         <li>Configure file</li>
-    </ul> 
+    </ul>
 
+    <h3>Super Admin</h3>
+    Super Admin can reorder id <a href="?reorder">here</a>
 </article>
 
 <article id="AddVisitors">
