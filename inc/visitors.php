@@ -57,7 +57,8 @@ if (isset($_POST['terminal']) && !empty($_POST['terminal']))
                                             regionname, 
                                             parcelname, 
                                             counter, 
-                                            timestamp
+                                            firstvisit,
+                                            lastvisit
                                         )
                                         VALUES (
                                             '".$name."',
@@ -67,6 +68,7 @@ if (isset($_POST['terminal']) && !empty($_POST['terminal']))
                                             '".$region."',
                                             '".$parcel."',
                                             1,
+                                            '".$timestamp."',
                                             '".$timestamp."'
                                         )
                                     ");
@@ -84,7 +86,7 @@ if (isset($_POST['terminal']) && !empty($_POST['terminal']))
                                             gridname = '".$grid."', 
                                             regionname = '".$region."', 
                                             parcelname = '".$parcel."', 
-                                            timestamp = '".$timestamp."'
+                                            lastvisit = '".$timestamp."'
                                         WHERE (
                                             useruuid = '".$uuid."'
                                             AND

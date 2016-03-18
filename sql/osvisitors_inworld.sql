@@ -35,7 +35,8 @@ CREATE TABLE IF NOT EXISTS `osvisitors_inworld` (
   `regionname` varchar(128) NOT NULL,
   `parcelname` varchar(128) NOT NULL,
   `counter` int(11) NOT NULL,
-  `timestamp` int(11) DEFAULT NULL
+  `firstvisit` int(11) NOT NULL,
+  `lastvisit` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 

@@ -124,9 +124,14 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
     $regionname = $row['regionname'];
     $parcelname = $row['parcelname'];
     $counter    = $row['counter'];
-    $timestamp  = $row['timestamp'];
-    $date       = date("d/m/Y", $timestamp);
-    $time       = date("h:m:s", $timestamp);
+
+    $firstvisit = $row['firstvisit'];
+    $firstdate  = date("d/m/Y", $firstvisit);
+    $firsttime  = date("h:m:s", $firstvisit);
+
+    $lastvisit  = $row['lastvisit'];
+    $lastdate   = date("d/m/Y", $lastvisit);
+    $lasttime   = date("h:m:s", $lastvisit);
 
     if (isset($_GET['filter']))
     {
@@ -137,8 +142,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
             echo '<tr>';
             echo '<td><span class="badge">'.++$i.'</span></td>';
             echo '<td>'.$username.'</td>';
-            echo '<td>'.$date.'</td>';
-            echo '<td>'.$time.'</td>';
+            echo '<td>'.$firstdate.'</td>';
+            echo '<td>'.$firsttime.'</td>';
             echo '<td>'.$gridname.'</td>';
             echo '<td>'.$regionname.'</td>';
             echo '<td>'.$parcelname.'</td>';
@@ -148,15 +153,15 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
 
         if ($_GET['filter'] == "today")
         {
-            if (date('d') == date("d", $timestamp))
+            if (date('d') == date("d", $lastvisit))
             {
                 $visites += $counter;
 
                 echo '<tr>';
                 echo '<td><span class="badge">'.++$i.'</span></td>';
                 echo '<td>'.$username.'</td>';
-                echo '<td>'.$date.'</td>';
-                echo '<td>'.$time.'</td>';
+                echo '<td>'.$firstdate.'</td>';
+                echo '<td>'.$firsttime.'</td>';
                 echo '<td>'.$gridname.'</td>';
                 echo '<td>'.$regionname.'</td>';
                 echo '<td>'.$parcelname.'</td>';
@@ -167,15 +172,15 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
 
         if ($_GET['filter'] == "yesterday")
         {
-            if (date('d') - 1 == date("d", $timestamp))
+            if (date('d') - 1 == date("d", $firstvisit))
             {
                 $visites += $counter;
 
                 echo '<tr>';
                 echo '<td><span class="badge">'.++$i.'</span></td>';
                 echo '<td>'.$username.'</td>';
-                echo '<td>'.$date.'</td>';
-                echo '<td>'.$time.'</td>';
+                echo '<td>'.$firstdate.'</td>';
+                echo '<td>'.$firsttime.'</td>';
                 echo '<td>'.$gridname.'</td>';
                 echo '<td>'.$regionname.'</td>';
                 echo '<td>'.$parcelname.'</td>';
@@ -186,15 +191,15 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
 
         if ($_GET['filter'] == "month")
         {
-            if (date('m') == date("m", $timestamp))
+            if (date('m') == date("m", $firstvisit))
             {
                 $visites += $counter;
 
                 echo '<tr>';
                 echo '<td><span class="badge">'.++$i.'</span></td>';
                 echo '<td>'.$username.'</td>';
-                echo '<td>'.$date.'</td>';
-                echo '<td>'.$time.'</td>';
+                echo '<td>'.$firstdate.'</td>';
+                echo '<td>'.$firsttime.'</td>';
                 echo '<td>'.$gridname.'</td>';
                 echo '<td>'.$regionname.'</td>';
                 echo '<td>'.$parcelname.'</td>';
@@ -205,15 +210,15 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
 
         if ($_GET['filter'] == "year")
         {
-            if (date('Y') == date("Y", $timestamp))
+            if (date('Y') == date("Y", $firstvisit))
             {
                 $visites += $counter;
 
                 echo '<tr>';
                 echo '<td><span class="badge">'.++$i.'</span></td>';
                 echo '<td>'.$username.'</td>';
-                echo '<td>'.$date.'</td>';
-                echo '<td>'.$time.'</td>';
+                echo '<td>'.$firstdate.'</td>';
+                echo '<td>'.$firsttime.'</td>';
                 echo '<td>'.$gridname.'</td>';
                 echo '<td>'.$regionname.'</td>';
                 echo '<td>'.$parcelname.'</td>';
@@ -230,8 +235,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
             echo '<tr>';
             echo '<td><span class="badge">'.++$i.'</span></td>';
             echo '<td>'.$username.'</td>';
-            echo '<td>'.$date.'</td>';
-            echo '<td>'.$time.'</td>';
+            echo '<td>'.$firstdate.'</td>';
+            echo '<td>'.$firsttime.'</td>';
             echo '<td>'.$gridname.'</td>';
             echo '<td>'.$regionname.'</td>';
             echo '<td>'.$parcelname.'</td>';
@@ -248,8 +253,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
         echo '<tr>';
         echo '<td><span class="badge">'.++$i.'</span></td>';
         echo '<td>'.$username.'</td>';
-        echo '<td>'.$date.'</td>';
-        echo '<td>'.$time.'</td>';
+        echo '<td>'.$firstdate.'</td>';
+        echo '<td>'.$firsttime.'</td>';
         echo '<td>'.$gridname.'</td>';
         echo '<td>'.$regionname.'</td>';
         echo '<td>'.$parcelname.'</td>';
