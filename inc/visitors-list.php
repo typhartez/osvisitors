@@ -100,8 +100,10 @@ echo '<thead>';
 echo '<tr>';
 echo '<th>#</th>';
 echo '<th>Username</th>';
-echo '<th>Date</th>';
-echo '<th>Time</th>';
+echo '<th>First Date</th>';
+echo '<th>First Time</th>';
+echo '<th>Last Date</th>';
+echo '<th>Last  Time</th>';
 echo '<th>Grid</th>';
 echo '<th>Region</th>';
 echo '<th>Parcel</th>';
@@ -144,6 +146,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
             echo '<td>'.$username.'</td>';
             echo '<td>'.$firstdate.'</td>';
             echo '<td>'.$firsttime.'</td>';
+            echo '<td>'.$lastdate.'</td>';
+            echo '<td>'.$lasttime.'</td>';
             echo '<td>'.$gridname.'</td>';
             echo '<td>'.$regionname.'</td>';
             echo '<td>'.$parcelname.'</td>';
@@ -162,6 +166,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
                 echo '<td>'.$username.'</td>';
                 echo '<td>'.$firstdate.'</td>';
                 echo '<td>'.$firsttime.'</td>';
+                echo '<td>'.$lastdate.'</td>';
+                echo '<td>'.$lasttime.'</td>';
                 echo '<td>'.$gridname.'</td>';
                 echo '<td>'.$regionname.'</td>';
                 echo '<td>'.$parcelname.'</td>';
@@ -181,6 +187,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
                 echo '<td>'.$username.'</td>';
                 echo '<td>'.$firstdate.'</td>';
                 echo '<td>'.$firsttime.'</td>';
+                echo '<td>'.$lastdate.'</td>';
+                echo '<td>'.$lasttime.'</td>';
                 echo '<td>'.$gridname.'</td>';
                 echo '<td>'.$regionname.'</td>';
                 echo '<td>'.$parcelname.'</td>';
@@ -200,6 +208,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
                 echo '<td>'.$username.'</td>';
                 echo '<td>'.$firstdate.'</td>';
                 echo '<td>'.$firsttime.'</td>';
+                echo '<td>'.$lastdate.'</td>';
+                echo '<td>'.$lasttime.'</td>';
                 echo '<td>'.$gridname.'</td>';
                 echo '<td>'.$regionname.'</td>';
                 echo '<td>'.$parcelname.'</td>';
@@ -219,6 +229,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
                 echo '<td>'.$username.'</td>';
                 echo '<td>'.$firstdate.'</td>';
                 echo '<td>'.$firsttime.'</td>';
+                echo '<td>'.$lastdate.'</td>';
+                echo '<td>'.$lasttime.'</td>';
                 echo '<td>'.$gridname.'</td>';
                 echo '<td>'.$regionname.'</td>';
                 echo '<td>'.$parcelname.'</td>';
@@ -237,6 +249,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
             echo '<td>'.$username.'</td>';
             echo '<td>'.$firstdate.'</td>';
             echo '<td>'.$firsttime.'</td>';
+            echo '<td>'.$lastdate.'</td>';
+            echo '<td>'.$lasttime.'</td>';
             echo '<td>'.$gridname.'</td>';
             echo '<td>'.$regionname.'</td>';
             echo '<td>'.$parcelname.'</td>';
@@ -255,6 +269,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC))
         echo '<td>'.$username.'</td>';
         echo '<td>'.$firstdate.'</td>';
         echo '<td>'.$firsttime.'</td>';
+        echo '<td>'.$lastdate.'</td>';
+        echo '<td>'.$lasttime.'</td>';
         echo '<td>'.$gridname.'</td>';
         echo '<td>'.$regionname.'</td>';
         echo '<td>'.$parcelname.'</td>';
