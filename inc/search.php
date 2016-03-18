@@ -99,6 +99,8 @@ if (isset($_POST['search']))
         echo '<td></td>';
         echo '<td></td>';
         echo '<td></td>';
+        echo '<td></td>';
+        echo '<td></td>';
         echo '<td class="text-right">Total visites <span class="badge">'.$visites.'</span></td>';
         echo '</tr>';
         echo '</tfoot>';

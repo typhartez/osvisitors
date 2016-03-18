@@ -289,6 +289,8 @@ echo '<td></td>';
 echo '<td></td>';
 echo '<td></td>';
 echo '<td></td>';
+echo '<td></td>';
+echo '<td></td>';
 echo '<td class="text-right">Total visit(s) <span class="badge">'.$visites.'</span></td>';
 echo '</tr>';
 echo '</tfoot>';
