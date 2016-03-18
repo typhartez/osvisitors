@@ -6,7 +6,7 @@ This is a Visitors system for Open Simulator
 
 <article>
     <h2>Features</h2>
-    Visitors List with "Display by"<br />
+    Visitors List with sorting<br />
     Search ability for visitor, grid, region, parcel<br />
     More coming ...
 </article>

@@ -13,7 +13,8 @@ if (isset($_POST['search']))
             WHERE username LIKE ?
             OR gridname LIKE ?
             OR regionname LIKE ?
-            OR 	parcelname LIKE ? 
+            OR parcelname LIKE ? 
+            ORDER BY lastvisit DESC
         ');
         $query = $db->prepare($query);
 
@@ -34,8 +35,10 @@ if (isset($_POST['search']))
         echo '<tr>';
         echo '<th>#</th>';
         echo '<th>Username</th>';
-        echo '<th>Date</th>';
-        echo '<th>Time</th>';
+        echo '<th>First Date</th>';
+        echo '<th>First Time</th>';
+        echo '<th>Last Date</th>';
+        echo '<th>Last  Time</th>';
         echo '<th>Grid</th>';
         echo '<th>Region</th>';
         echo '<th>Parcel</th>';
@@ -60,15 +63,24 @@ if (isset($_POST['search']))
                 $counter    = $result['counter'];
                 $visites   += $counter;
 
-                $timestamp  = $result['timestamp'];
-                $date       = date("d/m/Y", $timestamp);
-                $time       = date("h:m:s", $timestamp);
+                $firstvisit = $result['firstvisit'];
+                $firstdate  = date("d/m/Y", $firstvisit);
+                $firsttime  = date("d/m/Y", $firstvisit);
 
-                echo '<tr>';
+                $lastvisit  = $result['lastvisit'];
+                $lastdate   = date("d/m/Y", $lastvisit);
+                $lasttime   = date("h:m:s", $lastvisit);
+
+                if (date('d') == date("d", $lastvisit)) $class = 'active';
+                else $class = '';
+
+                echo '<tr class="'.$class.'">';
                 echo '<td><span class="badge">'.++$i.'</span></td>';
                 echo '<td>'.$username.'</td>';
-                echo '<td>'.$date.'</td>';
-                echo '<td>'.$time.'</td>';
+                echo '<td>'.$firstdate.'</td>';
+                echo '<td>'.$firsttime.'</td>';
+                echo '<td>'.$lastdate.'</td>';
+                echo '<td>'.$lasttime.'</td>';
                 echo '<td>'.$gridname.'</td>';
                 echo '<td>'.$regionname.'</td>';
                 echo '<td>'.$parcelname.'</td>';
