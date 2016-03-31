@@ -41,17 +41,23 @@ echo '<span class="caret"></span>';
 echo '</button>';
 echo '<ul class="dropdown-menu">';
 
-$buffer = [];
-$query->execute();
+$sql = $db->prepare("
+    SELECT *
+    FROM osvisitors_inworld
+    GROUP BY gridname
+");
 
-while ($row = $query->fetch(PDO::FETCH_ASSOC))
+$buffer = [];
+$sql->execute();
+
+while ($row = $sql->fetch(PDO::FETCH_ASSOC))
 {
     $gridname = $row['gridname'];
 
     if (!in_array($gridname, $buffer))
     {
         $buffer = [$gridname];
-        echo '<li><a href="?filter='.$gridname.'">'.$gridname.'</a></li>';
+        echo '<li><a href="?home&filter='.$gridname.'">'.$gridname.'</a></li>';
     }
 }
 
