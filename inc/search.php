@@ -38,7 +38,7 @@ if (isset($_POST['search']))
         echo '<th>First Date</th>';
         echo '<th>First Time</th>';
         echo '<th>Last Date</th>';
-        echo '<th>Last  Time</th>';
+        echo '<th>Last Time</th>';
         echo '<th>Grid</th>';
         echo '<th>Region</th>';
         echo '<th>Parcel</th>';
