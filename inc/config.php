@@ -3,7 +3,7 @@ session_start();
 header('Content-Type: text/html; charset=utf-8');
 ini_set('magic_quotes_gpc', 0);
 $osvisitors = "OpenSim Visitors";
-$version = "0.1";
+$version = "0.2";
 $debug = TRUE;
 
 $dbhost = "localhost";
@@ -13,6 +13,7 @@ $dbname = "<DB NAME>";
 $tbname = "osvisitors_inworld";
 
 $superadmin = "<SUPER ADMIN UUID>";
+$geoipservice = "http://ipinfo.io/";
 
 $useTheme = TRUE;
 /* Navbar Style */
