@@ -38,13 +38,23 @@ This is a Visitors system for Open Simulator
     osGetGender
     </pre>
 
+    <h3>Database</h3>
+    <ul>
+        <li>Create a database called "osmodules".</li>
+        <li>Import osvisitors_inworld.sql into "osmodules" database.</li>
+    </ul>
+
     <h3>inc/config.php</h3>
     <ul>
         <li>Configure file</li>
     </ul>
 
     <h3>Super Admin</h3>
-    Super Admin can reorder id <a href="?reorder">here</a>
+    <ul>
+        <li>reorder id <a href="?reorder">here</a></li>
+        <li>update flags <a href="?update">here</a></li>
+        <li>delete all visitors <a href="?delete">here</a></li>
+    </ul>
 </article>
 
 <article id="AddVisitors">
@@ -74,7 +84,7 @@ This is a Visitors system for Open Simulator
 
 <article>
     <h2>Donation</h2>
-    <?php include_once("inc/paypal.php"); ?>
+    <p><?php include_once("inc/paypal.php"); ?></p>
 </article>
 
 <div class="modal fade" id="terminal" role="dialog">
