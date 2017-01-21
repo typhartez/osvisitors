@@ -51,4 +51,4 @@
                 <a href="https://github.com/djphil/osvisitors" target="_blank">Fork me on GitHub</a>
             </div>
         </div>
-        <?php include_once("login-horizontal.php"); ?>
+        <div class="row">
