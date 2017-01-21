@@ -1,11 +1,16 @@
     <footer class="footer">
         <div class="container">
-            <p class="text-muted">
-            <span class="pull-right"><?php echo $osvisitors.' v'.$version; ?> by djphil <span class="label label-default">CC-BY-NC-SA 4.0</span></span>
-            &copy; 2015 - <?php $date = date('Y'); echo $date; ?> Digital Concepts - All rights reserved</p>
+            <span class="text-muted">
+                <span class="pull-right">
+                    <?php echo $osvisitors.' v'.$version; ?> by djphil 
+                    <span class="label label-default">CC-BY-NC-SA 4.0</span>
+                </span>
+                &copy; 2015 - <?php $date = date('Y'); echo $date; ?> Digital Concepts - All rights reserved
+            </span>
         </div>
     </footer>
 
+    </div><!-- /.row -->
     </div><!-- /.container -->
 
     <!-- Bootstrap core JavaScript -->
