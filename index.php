@@ -19,6 +19,8 @@ else if (isset($_GET['logout'])) $page = 3;
 else if (isset($_GET['help'])) $page = 4;
 else if (isset($_GET['search'])) $page = 5;
 else if (isset($_GET['reorder'])) $page = 6;
+else if (isset($_GET['delete'])) $page = 7;
+else if (isset($_GET['update'])) $page = 8;
 else {$page = 1;} 
 
 echo '<div class="content">';
@@ -28,6 +30,8 @@ else if ($page == 3) require("inc/logout.php");
 else if ($page == 4) require("inc/help.php");
 else if ($page == 5) require("inc/search.php");
 else if ($page == 6) require("inc/reorder.php");
+else if ($page == 7) require("inc/delete.php");
+else if ($page == 8) require("inc/update.php");
 else require("inc/404.php");
 echo '</div>';
 ?>
