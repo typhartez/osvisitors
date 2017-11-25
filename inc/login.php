@@ -52,8 +52,8 @@ if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['passw
 
                     if ($passwordHash <> "")
                     {
-                        $passwordHash   = md5(md5($password).":".$passwordSalt);
-                        $md5Password    = $passwordHash;
+                        $md5Password   = md5(md5($password).":".$passwordSalt);
+                        // $md5Password    = $passwordHash;
 
                         if ($passwordHash == $md5Password)
                         {
@@ -75,7 +75,7 @@ if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['passw
 }
 ?>
 
-<h1><?php echo $osvisitors; ?> <span class="pull-right">Login</span></h1>
+<h1>Login<i class="glyphicon glyphicon-log-in pull-right"></i></h1>
 <div id="alert" class="alert alert-info alert-anim"></div>
 
 <script>
