@@ -7,13 +7,15 @@ $version = "0.2";
 $debug = TRUE;
 
 $dbhost = "localhost";
-$dbuser = "root";
+$dbuser = "<DB USER>";
 $dbpass = "<DB PASS>";
 $dbname = "<DB NAME>";
 $tbname = "osvisitors_inworld";
 
 $superadmin = "<SUPER ADMIN UUID>";
-$geoipservice = "http://ipinfo.io/";
+
+$geoipservice = "http://api.ipstack.com/";
+$geoip_apikey = "<APIKEY>";
 
 $useTheme = TRUE;
 /* Navbar Style */
